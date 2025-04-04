@@ -1,0 +1,47 @@
+body{
+  background: url(https://img.freepik.com/free-photo/white-cloud-blue-sky_1203-9447.jpg?t=st=1743781822~exp=1743785422~hmac=3aa08f3eeda63d023186cc1077c4cdae74213af4bf69ebbacb5fbb25784eec9f&w=996);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container{
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-box{
+  border: 0.5px solid black;
+  border-radius: 30px;
+  background: rgb(255, 255, 255, 0.6);
+  width: 400px;
+  padding: 2em;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.12), 
+              0 4px 4px rgba(0,0,0,0.12), 
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
+}
+
+.button-box{
+  /* border: 1px solid black; */
+  border-radius: 25px;
+  padding: 1em;
+  margin-top: 2rem;
+}
+
+.button-box button{
+  margin: 0.4em;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.12), 
+              0 4px 4px rgba(0,0,0,0.12), 
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
+}
