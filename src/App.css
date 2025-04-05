@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'KakaoSmallSans-Bold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoSmallSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
 body{
   background: url(https://img.freepik.com/free-photo/white-cloud-blue-sky_1203-9447.jpg?t=st=1743781822~exp=1743785422~hmac=3aa08f3eeda63d023186cc1077c4cdae74213af4bf69ebbacb5fbb25784eec9f&w=996);
   height: 100vh;
@@ -6,6 +13,7 @@ body{
 }
 
 .container{
+  font-family: 'KakaoSmallSans-Bold';
   height: 100vh;
   display:flex;
   flex-direction: column;
@@ -14,7 +22,6 @@ body{
 }
 
 .weather-box{
-  border: 0.5px solid black;
   border-radius: 30px;
   background: rgb(255, 255, 255, 0.6);
   width: 400px;
@@ -28,6 +35,10 @@ body{
               0 4px 4px rgba(0,0,0,0.12), 
               0 8px 8px rgba(0,0,0,0.12),
               0 16px 16px rgba(0,0,0,0.12);
+}
+
+.weather-box *{
+  padding: 8px;
 }
 
 .button-box{
@@ -44,4 +55,60 @@ body{
               0 4px 4px rgba(0,0,0,0.12), 
               0 8px 8px rgba(0,0,0,0.12),
               0 16px 16px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 768px) {
+
+  .weather-box {
+    width: 100%;
+    max-width: 90vw;
+    padding: 1.5em;
+  }
+
+  .weather-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .weather-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .button-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+    margin-top: 1.5rem;
+  }
+
+  .button-box button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-box {
+    padding: 1em;
+  }
+
+  .weather-box h2 {
+    font-size: 1.3rem;
+  }
+
+  .weather-box h3 {
+    font-size: 1rem;
+  }
+
+  .button-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-box button {
+    width: 100%;
+    max-width: 90vw;
+    font-size: 0.95rem;
+  }
 }
