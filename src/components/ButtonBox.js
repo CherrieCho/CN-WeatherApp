@@ -3,31 +3,27 @@ import { Button } from "react-bootstrap";
 
 const ButtonBox = ({
   cities,
+  city,
   setCity,
-  getCurrentLocation,
   selectedCity,
   setSelectedCity,
-  isCurrentLocation,
-  setIsCurrentLocation,
 }) => {
   //city state를 바꾸고 선택된 도시도 바꾸는 함수
   const handleCityClick = (city) => {
     setCity(city);
     setSelectedCity(city);
-    setIsCurrentLocation(false);
   };
 
   //current location 클릭 시 호출
   const currentLocationClick = () => {
-    getCurrentLocation();
+    setCity("");
     setSelectedCity("");
-    setIsCurrentLocation(true);
   };
 
   return (
     <div className="button-box">
       <Button
-        variant={isCurrentLocation ? "dark" : "warning"}
+        variant={city === "" ? "dark" : "warning"}
         onClick={() => currentLocationClick()}
       >
         Current Location

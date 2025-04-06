@@ -11,7 +11,6 @@ function App() {
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
-  const [isCurrentLocation, setIsCurrentLocation] = useState(false);
   const cities = ["Seoul", "New York", "Vancouver", "Tokyo", "Sydney"];
 
   //현재 위치(위도, 경도)값 추출
@@ -33,7 +32,6 @@ function App() {
       if (!response.ok) throw new Error("API 응답 실패"); // HTTP 오류 처리
       const data = await response.json();
       setWeather(data); //받아온 날씨데이터가 state가 됨
-      setIsCurrentLocation(true);
     } catch (error) {
       console.error("현재 위치 날씨 호출 중 에러:", error);
       alert("날씨 정보를 불러오는 중 오류가 발생했습니다.");
@@ -52,7 +50,6 @@ function App() {
       if (!response.ok) throw new Error("API 응답 실패");
       const data = await response.json();
       setWeather(data);
-      setIsCurrentLocation(false);
     } catch (error) {
       console.error("도시 날씨 호출 중 에러:", error);
       alert("선택한 도시의 날씨 정보를 불러오는 중 오류가 발생했습니다.");
@@ -86,12 +83,10 @@ function App() {
           <WeatherBox weather={weather} />
           <ButtonBox
             cities={cities}
+            city={city}
             setCity={setCity}
             selectedCity={selectedCity}
             setSelectedCity={setSelectedCity}
-            getCurrentLocation={getCurrentLocation}
-            isCurrentLocation={isCurrentLocation}
-            setIsCurrentLocation={setIsCurrentLocation}
           />
         </div>
       )}
